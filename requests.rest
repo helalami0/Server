@@ -1,0 +1,26 @@
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+  "username": "Bob",
+  "password": "bob"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "Bob",
+  "password": "bob"
+}
+
+###
+GET http://localhost:5000/api/users
+Authorization: Bearer authkey
+
+###
+GET http://localhost:5000/api/auth/refresh_token
+
+###
+DELETE http://localhost:5000/api/auth/refresh_token
