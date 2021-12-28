@@ -1,6 +1,6 @@
 const pool = require('./db.js').getPool();
 const bcrypt = require("bcrypt");
-require('dotenv').config()
+// require('dotenv').config()
 
 const express = require("express");
 const socket = require("socket.io");
