@@ -63,25 +63,25 @@ io.on('connection', async (socket)=>{
         }
     });
 
-    // socket.on('create_room', ()=>{
-    //     var thisGameId = (Math.random() * 1000000 ) | 0;
-    //     socket.join(thisGameId.toString());
-    //     console.log("gameID: ", thisGameId)
-    //     user[1] = thisGameId.toString()
-    //     io.to(socket.id).emit("room_id", thisGameId)
-    // });
-    //
-    // socket.on('join_room', (room)=>{
-    //     fRoom = room[0]
-    //     socket.join(fRoom);
-    //     var room = io.sockets.adapter.rooms.get(fRoom).size
-    //     if(room === 2 ) {
-    //         user[1] = fRoom
-    //         games.push([fRoom, "", ""])
-    //         io.to(socket.id).emit('sessionJoin', room)
-    //         io.in(fRoom).emit("session", room)
-    //     }
-    // });
+    socket.on('create_room', ()=>{
+        var thisGameId = (Math.random() * 1000000 ) | 0;
+        socket.join(thisGameId.toString());
+        console.log("gameID: ", thisGameId)
+        user[1] = thisGameId.toString()
+        io.to(socket.id).emit("room_id", thisGameId)
+    });
+
+    socket.on('join_room', (room)=>{
+        fRoom = room[0]
+        socket.join(fRoom);
+        var room = io.sockets.adapter.rooms.get(fRoom).size
+        if(room === 2 ) {
+            user[1] = fRoom
+            games.push([fRoom, "", ""])
+            io.to(socket.id).emit('sessionJoin', room)
+            io.in(fRoom).emit("session", room)
+        }
+    });
     //
     // socket.on('confirmBoard', (board)=>{
     //     user[2] = board
