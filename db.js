@@ -1,6 +1,4 @@
-// import dotenv from 'dotenv';
-
-// dotenv.config()
+require('dotenv').config()
 
 // import pg from 'pg';
 const pg = require('pg');
