@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6610d0b-24d6-406c-a685-d6ce86f51338" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +50,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.testing.js">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/requests.rest" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -73,7 +85,7 @@
       <workItem from="1640213484396" duration="4000" />
       <workItem from="1640213514263" duration="1896000" />
       <workItem from="1640344269071" duration="38719000" />
-      <workItem from="1640700067373" duration="4689000" />
+      <workItem from="1640700067373" duration="6248000" />
     </task>
     <task id="LOCAL-00001" summary="Commit V1.01">
       <created>1640700914426</created>
@@ -117,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640706207823</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit V1.01">
+      <created>1640706298373</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640706298373</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,10 +147,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Commit V1.01" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="217" y="23" key="CommitChangelistDialog2" timestamp="1640706207509">
+    <state x="217" y="23" key="CommitChangelistDialog2" timestamp="1640706298062">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="217" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1640706207509" />
+    <state x="217" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1640706298062" />
     <state x="513" y="315" key="Github.ShareDialog" timestamp="1640389528778">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -156,10 +175,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1238" height="198" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1640480174097" />
-    <state x="240" y="151" key="Vcs.Push.Dialog.v2" timestamp="1640706209648">
+    <state x="240" y="151" key="Vcs.Push.Dialog.v2" timestamp="1640706303101">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="240" y="151" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1640706209648" />
+    <state x="240" y="151" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1640706303101" />
     <state x="438" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1640704009257">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
