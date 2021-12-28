@@ -1,4 +1,4 @@
-const pool = require('./db.js').getPool();
+// const pool = require('./db.js').getPool();
 const bcrypt = require("bcrypt");
 // require('dotenv').config()
 
