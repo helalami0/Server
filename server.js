@@ -13,6 +13,8 @@ const server = app.listen(PORT);
 app.use(express.static('public'));
 console.log("Server is running on port: " + PORT);
 const io = socket(server);
+io.rooms = []
+io.gamesMap = new Map()
 
 io.on('connection', async (socket)=>{
     console.log("New socket connection: " + socket.id);
@@ -41,8 +43,8 @@ io.on('connection', async (socket)=>{
         }
         id = users.rows[0].user_id;
         console.log("myid", id)
-        socket.user.id = id
-        socket.user.username = userData.username
+        socket.userid = id
+        socket.username = userData.username
         socket.emit('status', 200);
     })
 
@@ -53,7 +55,7 @@ io.on('connection', async (socket)=>{
             const hashedPassword = await bcrypt.hash(userData.password, 10);
             const newUser = await pool.query('INSERT INTO users (user_name, user_password) VALUES ($1, $2) RETURNING *', [userData.username, hashedPassword]);
             id = await pool.query('SELECT user_id FROM users WHERE user_name = $1', [userData.username]);
-            user[0] = id
+            socket.userid = id
             socket.emit('status', 200)
         }
         catch(error){
@@ -62,72 +64,52 @@ io.on('connection', async (socket)=>{
     });
 
     socket.on('create_room', ()=>{
-        var thisGameId = (Math.random() * 1000000 ) | 0;
-        // io.games.push(thisGameId)
-        socket.join(thisGameId.toString());
+        var thisGameId = ((Math.random() * 1000000 ) | 0).toString();
+        socket.join(thisGameId);
         console.log("gameID: ", thisGameId)
-        socket.user.room = thisGameId.toString()
+        socket.roomid = thisGameId
+        io.rooms.push(thisGameId)
+        console.log("Specific: ", socket.roomid)
+        console.log("General: ", io.rooms)
         io.to(socket.id).emit("room_id", thisGameId)
+        io.gamesMap.set(thisGameId, [])
+    });
+
+    socket.on("testing", ()=>{
+        // socket.emit("test", socket.roomid)
+        console.log("testinng", io.gamesMap.get(socket.roomid))
     });
 
     socket.on('join_room', (room)=>{
         fRoom = room[0]
-        socket.join(fRoom);
-        var room = io.sockets.adapter.rooms.get(fRoom).size
-        if(room === 2 ) {
-            socket.user.room = fRoom
-            socket.emit('sessionJoin', room)
-            io.in(fRoom).emit("session", room)
+        if(io.gamesMap.has(fRoom)){
+            var room = io.sockets.adapter.rooms.get(fRoom).size
+            if(room === 1 ) {
+                socket.join(fRoom);
+                socket.roomid = fRoom
+                socket.emit('sessionJoin', room)
+                io.in(fRoom).emit("session", room)
+            }
         }
     });
-    //
-    // socket.on('confirmBoard', (board)=>{
-    //     user[2] = board
-    //     // socket.emit('createGame')
-    //     for(let game of games){
-    //         if(game[0][0] === user[1]){
-    //             // console.log("Here1")
-    //             // console.log("game", game[1])
-    //             console.log("userrr", user[0])
-    //             if(game[0][1] === user[0] && game[0][2] != ""){
-    //                 console.log("Here2")
-    //                 io.to(socket.id).emit('gameCreated', "true")
-    //                 io.in(fRoom).emit("gameCreated", "false")
-    //             }
-    //             else if(game[0][2] === user[0] && game[0][1] != ""){
-    //                 console.log("Here3")
-    //                 io.to(socket.id).emit('gameCreated', "true")
-    //                 io.in(fRoom).emit("gameCreated", "false")
-    //             }
-    //             else if(game[0][1] == "") game[0][1] = user;
-    //             else if(game[0][2] == "") game[0][2] = user;
-    //             console.log("game1: ", game[0][1])
-    //             console.log("game2: ", game[2])
-    //         }
-    //     }
-    // });
-    //
-    // socket.on('createGame', ()=>{
-    //     for(let game in games){
-    //         console.log("Here")
-    //         if(game[0] === user[1]){
-    //             console.log("Here1")
-    //             if(game[1] === user[0] && game[2] != ""){
-    //                 console.log("Here2")
-    //                 io.to(socket.id).emit('gameCreated', "false")
-    //                 io.in(fRoom).emit("gameCreated", "true")
-    //             }
-    //             else if(game[2] === user[0] && game[1] != ""){
-    //                 console.log("Here3")
-    //                 io.to(socket.id).emit('gameCreated', "false")
-    //                 io.in(fRoom).emit("gameCreated", "truuue")
-    //             }
-    //             else if(game[1] == "") game[1] = user;
-    //             else if(game[2] == "") game[2] = user;
-    //             console.log("Here")
-    //         }
-    //     }
-    // });
+
+    socket.on('confirmBoard', (board)=>{
+        socket.board = board
+        let game = io.gamesMap.get(socket.roomid)
+        if(game.length == 0){
+            io.gamesMap.set(socket.roomid, [socket.userid])
+        }
+        else if(game.length == 1 && !game.includes(socket.userid)){
+            game.push(socket.userid)
+            io.gamesMap.set(socket.roomid, game)
+
+            //Random player begins
+            let random_boolean = Math.random() < 0.5;
+            io.in(fRoom).emit("gameCreated", random_boolean)
+            socket.emit("gameCreated", !random_boolean)
+        }
+    });
+
     //
     // socket.on('attack', (cell)=>{
     //     for(let game in games){
