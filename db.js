@@ -10,7 +10,7 @@ let localPoolConfig = {
     host:process.env.DB_HOST,
     port:process.env.DB_PORT,
     // database:'Poker'
-    database:''
+    database:'d4vt7c29h6vqj3'
 }
 
 const poolConfig = process.env.DATABASE_URL? {
