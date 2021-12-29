@@ -51,17 +51,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.testing.js">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/requests.rest" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -86,7 +75,8 @@
       <workItem from="1640213484396" duration="4000" />
       <workItem from="1640213514263" duration="1896000" />
       <workItem from="1640344269071" duration="38719000" />
-      <workItem from="1640700067373" duration="9861000" />
+      <workItem from="1640700067373" duration="10419000" />
+      <workItem from="1640782599328" duration="1626000" />
     </task>
     <task id="LOCAL-00001" summary="Commit V1.01">
       <created>1640700914426</created>
@@ -172,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640714160608</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Commit V1.01">
+      <created>1640714280122</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1640714280122</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,10 +180,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Commit V1.01" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="217" y="23" key="CommitChangelistDialog2" timestamp="1640714160319">
+    <state x="217" y="23" key="CommitChangelistDialog2" timestamp="1640714279589">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="217" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1640714160319" />
+    <state x="217" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1640714279589" />
     <state x="513" y="315" key="Github.ShareDialog" timestamp="1640389528778">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -211,10 +208,14 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1238" height="198" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1640480174097" />
-    <state x="240" y="151" key="Vcs.Push.Dialog.v2" timestamp="1640714162696">
+    <state x="398" y="180" key="MultipleFileMergeDialog" timestamp="1640714313367">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="240" y="151" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1640714162696" />
+    <state x="398" y="180" key="MultipleFileMergeDialog/0.23.1280.777@0.23.1280.777" timestamp="1640714313367" />
+    <state x="240" y="151" key="Vcs.Push.Dialog.v2" timestamp="1640714285268">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="240" y="151" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1640714285267" />
     <state x="438" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1640704009257">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

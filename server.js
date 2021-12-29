@@ -1,6 +1,6 @@
 const pool = require('./db.js').getPool();
 const bcrypt = require("bcrypt");
-// require('dotenv').config()
+require('dotenv').config()
 
 const express = require("express");
 const socket = require("socket.io");
@@ -14,38 +14,36 @@ app.use(express.static('public'));
 console.log("Server is running on port: " + PORT);
 const io = socket(server);
 
-let games = []
-
 io.on('connection', async (socket)=>{
-    let user = ["", "", "", ""]
     console.log("New socket connection: " + socket.id);
 
-    socket.on('counter', ()=>{
-        count++;
-        console.log(count);
-        console.log(socket.id);
-        io.emit('counter', count);
-    })
+    // socket.on('counter', ()=>{
+    //     count++;
+    //     console.log(count);
+    //     console.log(socket.id);
+    //     io.emit('counter', count);
+    // })
 
     socket.on('login', async(userData)=>{
         console.log("Username: ", userData.password);
         const users = await pool.query('SELECT * FROM users WHERE user_name = $1', [userData.username]);
         if(users.rows.length===0){
             console.log('within')
-            io.emit('status', 401);
+            socket.emit('status', 401);
             return;
         }
 
         const validPassword = await bcrypt.compare(userData.password, users.rows[0].user_password);
 
         if(!validPassword){
-            io.emit('status', 402);
+            socket.emit('status', 402);
             return;
         }
         id = users.rows[0].user_id;
         console.log("myid", id)
-        user[0] = id
-        io.emit('status', 200);
+        socket.user.id = id
+        socket.user.username = userData.username
+        socket.emit('status', 200);
     })
 
     socket.on('register', async(userData)=>{
@@ -56,18 +54,19 @@ io.on('connection', async (socket)=>{
             const newUser = await pool.query('INSERT INTO users (user_name, user_password) VALUES ($1, $2) RETURNING *', [userData.username, hashedPassword]);
             id = await pool.query('SELECT user_id FROM users WHERE user_name = $1', [userData.username]);
             user[0] = id
-            io.emit('status', 200)
+            socket.emit('status', 200)
         }
         catch(error){
-            io.emit('status', 405)
+            socket.emit('status', 405)
         }
     });
 
     socket.on('create_room', ()=>{
         var thisGameId = (Math.random() * 1000000 ) | 0;
+        // io.games.push(thisGameId)
         socket.join(thisGameId.toString());
         console.log("gameID: ", thisGameId)
-        user[1] = thisGameId.toString()
+        socket.user.room = thisGameId.toString()
         io.to(socket.id).emit("room_id", thisGameId)
     });
 
@@ -76,9 +75,8 @@ io.on('connection', async (socket)=>{
         socket.join(fRoom);
         var room = io.sockets.adapter.rooms.get(fRoom).size
         if(room === 2 ) {
-            user[1] = fRoom
-            games.push([fRoom, "", ""])
-            io.to(socket.id).emit('sessionJoin', room)
+            socket.user.room = fRoom
+            socket.emit('sessionJoin', room)
             io.in(fRoom).emit("session", room)
         }
     });
