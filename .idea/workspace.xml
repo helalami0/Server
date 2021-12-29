@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6610d0b-24d6-406c-a685-d6ce86f51338" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.testing.js">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/requests.rest" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -76,7 +89,7 @@
       <workItem from="1640213514263" duration="1896000" />
       <workItem from="1640344269071" duration="38719000" />
       <workItem from="1640700067373" duration="10419000" />
-      <workItem from="1640782599328" duration="10603000" />
+      <workItem from="1640782599328" duration="11713000" />
     </task>
     <task id="LOCAL-00001" summary="Commit V1.01">
       <created>1640700914426</created>
@@ -176,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640786979191</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Commit V1.01">
+      <created>1640819306601</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1640819306601</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,11 +207,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="Commit V1.01" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="217" y="25" key="CommitChangelistDialog2" timestamp="1640786978704">
+    <state x="217" y="25" key="CommitChangelistDialog2" timestamp="1640819305986">
       <screen x="0" y="25" width="1280" height="775" />
     </state>
     <state x="217" y="23" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1640714279589" />
-    <state x="217" y="25" key="CommitChangelistDialog2/0.25.1280.775@0.25.1280.775" timestamp="1640786978704" />
+    <state x="217" y="25" key="CommitChangelistDialog2/0.25.1280.775@0.25.1280.775" timestamp="1640819305986" />
     <state x="513" y="315" key="Github.ShareDialog" timestamp="1640389528778">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -220,11 +240,11 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="398" y="180" key="MultipleFileMergeDialog/0.23.1280.777@0.23.1280.777" timestamp="1640714313367" />
-    <state x="240" y="153" key="Vcs.Push.Dialog.v2" timestamp="1640786981603">
+    <state x="240" y="153" key="Vcs.Push.Dialog.v2" timestamp="1640819309359">
       <screen x="0" y="25" width="1280" height="775" />
     </state>
     <state x="240" y="151" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1640714285267" />
-    <state x="240" y="153" key="Vcs.Push.Dialog.v2/0.25.1280.775@0.25.1280.775" timestamp="1640786981603" />
+    <state x="240" y="153" key="Vcs.Push.Dialog.v2/0.25.1280.775@0.25.1280.775" timestamp="1640819309359" />
     <state x="438" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1640704009257">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
