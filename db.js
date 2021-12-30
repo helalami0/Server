@@ -1,7 +1,7 @@
 // require('dotenv').config()
 
 // import pg from 'pg';
-const pg = require('pg');
+const pg = require("pg");
 const {Pool} = pg;
 
 let localPoolConfig = {
