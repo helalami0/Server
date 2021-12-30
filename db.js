@@ -17,7 +17,7 @@ let localPoolConfig = {
 //     ssl: { rejectUnauthorized: false }
 // } : localPoolConfig;
 
-const pool = new Pool(poolConfig);
+const pool = new Pool(localPoolConfig);
 
 module.exports = {
     getPool: function () {
