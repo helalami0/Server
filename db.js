@@ -11,7 +11,7 @@ let localPoolConfig = {
     port:process.env.DB_PORT,
     database:process.env.DB_DATABASE
 }
-
+console.log("test: ", process.env.DATABASE_URL)
 const poolConfig = process.env.DATABASE_URL? {
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false }
