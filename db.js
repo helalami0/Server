@@ -9,8 +9,7 @@ let localPoolConfig = {
     password:process.env.DB_PASSWORD,
     host:process.env.DB_HOST,
     port:process.env.DB_PORT,
-    // database:'Poker'
-    database:'d4vt7c29h6vqj3'
+    database:'HerokuBattleShipServer'
 }
 
 const poolConfig = process.env.DATABASE_URL? {
