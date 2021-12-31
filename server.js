@@ -1,5 +1,5 @@
 // const pool = require('./db.js').getPool();
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 // require('dotenv').config()
 
 const express = require("express");
