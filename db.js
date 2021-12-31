@@ -17,7 +17,7 @@ const poolConfig = process.env.DATABASE_URL ? {
     ssl: {rejectUnauthorized: true}
 } : localPoolConfig;
 
-const pool = new Pool(localPoolConfig);
+const pool = new Pool(poolConfig);
 
 module.exports = {
     getPool: function () {
