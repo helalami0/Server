@@ -12,10 +12,10 @@ let localPoolConfig = {
     database: process.env.DB_DATABASE
 }
 
-// const poolConfig = process.env.DATABASE_URL? {
-//     connectionString: process.env.DATABASE_URL,
-//     ssl: { rejectUnauthorized: false }
-// } : localPoolConfig;
+const poolConfig = process.env.DATABASE_URL ? {
+    connectionString: process.env.DATABASE_URL,
+    ssl: {rejectUnauthorized: false}
+} : localPoolConfig;
 
 const pool = new Pool(localPoolConfig);
 
